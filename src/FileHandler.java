@@ -238,21 +238,6 @@ public class FileHandler {
         return null;
     }
 
-    public static void deleteLineAt(String fileName, int start) {
-        // grab the line from position "start" in the file
-        try (RandomAccessFile rf = new RandomAccessFile(fileName, "rws")) {
-            ReadFile file = new ReadFile(fileName);
-            int line = file.lineNumber(fileName, String);
-            rf.seek(start);
-            BufferedWriter writer = new BufferedWriter(new FileWriter("me.txt"));
-            writer.write("");
-            write.close();
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
 
     public static void writeLineAt(String fileName, String data, int start) {
         // overwrite a line from position "start" in the file

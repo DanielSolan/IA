@@ -5,7 +5,7 @@ public class Main {
         System.out.println("Welcome to Simple Fluid Simulation");
         Scanner input = new Scanner(System.in);
         System.out.println("Do you want to use a guest account or your own? True for guest and false otherwise.");
-        //User can log in and use their own saved preferences or
+        //User can log in and use their own saved preferences or use the app without that.
         String accountChoice = input.nextLine();
         if(accountChoice.equals("Guest")){
             //Proceeds as usual without login or preferences
