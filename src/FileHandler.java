@@ -76,21 +76,6 @@ public class FileHandler {
         return 0;
     }
 
-    public static int elementCount(String fileName){
-        int counter = 0;
-        try(BufferedReader pw = new BufferedReader(new FileReader(fileName))){
-            int ascii = pw.read();
-            while (Integer.toString(ascii) != null){
-                counter++;
-                ascii = pw.read();
-            }
-            return counter;
-        }catch(IOException e){
-            e.printStackTrace();
-        }
-        return 0;
-    }
-
     public static boolean containsElement(String fileName,int element){
         boolean hasFound = false;
         try(BufferedReader pw = new BufferedReader(new FileReader(fileName))){
@@ -255,6 +240,7 @@ public class FileHandler {
 
 
     public static void writeLineAt(String fileName, String data, int start) {
+        //TODO: Use this method to comply with IA mastery
         // overwrite a line from position "start" in the file
         // doesn't check that the start position is actually
         // the beginning of the file. This will not behave well
