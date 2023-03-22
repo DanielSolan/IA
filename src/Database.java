@@ -16,7 +16,6 @@ public class Database {
             data = data + "";
             difference = rowWidth - data.length();
         }
-        // TODO: Report an error if the data is too long for the record
         if(difference<0){
             System.out.println("The data is too long to add it.");
             return;
@@ -44,7 +43,10 @@ public class Database {
     // search for a record matching data
     // return true if found
     public boolean findRecord(String data, String fileName) {
-
-        return false; // TODO: replace this placeholder code
+        if(FileHandler.containsElement(fileName, data) == true){
+            return true;
+        } else{
+            return false;
+        }
     }
 }
