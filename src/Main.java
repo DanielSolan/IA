@@ -2,6 +2,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Database userLogin = new Database("login.txt", 4);
+        userLogin.deleteRecord(2);
 
         System.out.println("Welcome to Simple Fluid Simulation");
         Scanner input = new Scanner(System.in);
@@ -22,12 +23,12 @@ public class Main {
 
             if(preAcc==true){
                 String ID = "0";
-
                 while(ID.length()!=4){
                     System.out.println("Please can you enter your 4-digit ID:");
                     ID = input.nextLine();
                     //Must check if user ID exists.
                     if(userLogin.findRecord(ID, "login.txt")==false){
+                        //The user isn't allowed to proceed.
                         System.out.println("That ID doesn't exist.");
                     } else{
 

@@ -17,6 +17,7 @@ public class FileHandler {
             pr.println(data);
         }
         catch (IOException e) {
+            System.out.println("There has been an error with the process.");
             e.printStackTrace();
         }
     }
@@ -37,7 +38,7 @@ public class FileHandler {
         // grab the line from position "start" in the file
         try (RandomAccessFile rf = new RandomAccessFile(fileName, "rws")) {
             rf.seek(start);
-            BufferedWriter writer = new BufferedWriter(new FileWriter("me.txt"));
+            PrintWriter writer = new PrintWriter(new FileWriter(fileName));
             writer.write("");
             writer.close();
         }
@@ -74,6 +75,16 @@ public class FileHandler {
         // doesn't check that the start position is actually
         // the beginning of the file. This will not behave well
         // unless every line is the same length.
+        try (RandomAccessFile rf = new RandomAccessFile(fileName, "rws")) {
+            rf.seek(start);
+            PrintWriter writer = new PrintWriter(new FileWriter(fileName));
+            writer.write("");
+            writer.write(data);
+            writer.close();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static int countLines(String fileName) {
