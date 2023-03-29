@@ -29,6 +29,7 @@ public class FileHandler {
             return rf.readLine();
         }
         catch (IOException e) {
+            System.out.println("There has been an error with the process.");
             e.printStackTrace();
         }
         return null;
@@ -43,10 +44,14 @@ public class FileHandler {
             writer.close();
         }
         catch (IOException e) {
+            System.out.println("There has been an error with the process.");
             e.printStackTrace();
         }
     }
     public static boolean containsElement(String fileName,String element){
+        //Checks each line of the file
+        //If data equals desired value, returns true.
+        //If not, it continues until there are no elements left to check and returns false.
         boolean hasFound = false;
         try(BufferedReader pw = new BufferedReader(new FileReader(fileName))){
             String ascii = pw.readLine();
@@ -59,6 +64,7 @@ public class FileHandler {
             }
             return hasFound;
         }catch(IOException e){
+            System.out.println("There has been an error with the process.");
             e.printStackTrace();
         }
         return false;
@@ -83,6 +89,7 @@ public class FileHandler {
             writer.close();
         }
         catch (IOException e) {
+            System.out.println("There has been an error with the process.");
             e.printStackTrace();
         }
     }
@@ -99,6 +106,7 @@ public class FileHandler {
 
         }
         catch (IOException e) {
+            System.out.println("There has been an error with the process.");
             e.printStackTrace();
         }
         return counter;

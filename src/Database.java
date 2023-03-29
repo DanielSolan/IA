@@ -9,8 +9,8 @@ public class Database {
         recordCount = FileHandler.countLines(filename);
     }
 
-    // add a new record to the end of the database
     public void appendRecord(String data) {
+        // add a new record to the end of the database
         int difference = rowWidth - data.length();
         while (difference>0){
             data = data + "";
@@ -24,25 +24,25 @@ public class Database {
         recordCount++;
     }
 
-    // delete the record at the specified row
     public void deleteRecord(int rowNumber) {
+        // delete the record at the specified row
         FileHandler.deleteLineAt(filename, rowNumber);
         recordCount--;
     }
 
-    // return the record at the specified row
     public String getRecord(int rowNumber) {
+        // return the record at the specified row
         return FileHandler.readLineAt(filename , rowNumber);
     }
 
-    // return the number of records in the database
     public int getRecordCount(String fileName) {
+        // return the number of records in the database
         return FileHandler.countLines(fileName);
     }
 
-    // search for a record matching data
-    // return true if found
     public boolean findRecord(String data, String fileName) {
+        // search for a record matching data
+        // return true if found
         if(FileHandler.containsElement(fileName, data) == true){
             return true;
         } else{
