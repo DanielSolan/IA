@@ -111,6 +111,4 @@ public class FileHandler {
         }
         return counter;
     }
-
-
 }
