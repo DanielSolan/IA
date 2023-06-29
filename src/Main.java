@@ -1,8 +1,18 @@
+import javax.swing.*;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Database userLogin = new Database("login.txt", 4);
         userLogin.deleteRecord(2);
+
+        System.out.println("SEQUENCE: Program started");
+        JFrame frame = new JFrame("Default Frame");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        GUIMain myGUI = new GUIMain(1920, 1080);
+        frame.add(myGUI);
+        frame.pack();
+        frame.setVisible(true);
 
         System.out.println("Welcome to Simple Fluid Simulation");
         Scanner input = new Scanner(System.in);
