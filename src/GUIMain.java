@@ -1,22 +1,27 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 public class GUIMain extends JPanel{
     JButton button1;
     JButton button2;
+    private BufferedImage logo;
 
-    public GUIMain(int width, int height) {
+    public GUIMain(int width, int height) throws IOException {
         System.out.println("Creating GUI");
         this.setPreferredSize(new Dimension(width, height));
         setLayout(null);
         JLabel mainText = new JLabel("Welcome to Simple Fluid Simulation");
-        mainText.setBounds(200, 100, 250, 30);
+        mainText.setBounds(560, 100, 250, 30);
         add(mainText);
         JLabel subText1 = new JLabel("Create whatever fluid you want and push this program to the limit");
-        subText1.setBounds(120, 120, 400, 60);
+        subText1.setBounds(480, 120, 400, 60);
         add(subText1);
         JLabel subText2 = new JLabel("Do you want to use a guest account or your own?");
-        subText2.setBounds(165, 200, 300, 30);
+        subText2.setBounds(520, 200, 300, 30);
         add(subText2);
         button1 = new JButton("Guest Account");
         button1.setBounds(125,300, 150, 40);
