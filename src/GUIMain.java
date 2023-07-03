@@ -8,7 +8,7 @@ import java.io.IOException;
 public class GUIMain extends JPanel{
     JButton button1;
     JButton button2;
-    private BufferedImage logo;
+    private BufferedImage logoPic;
 
     public GUIMain(int width, int height) throws IOException {
         System.out.println("Creating GUI");
@@ -24,11 +24,12 @@ public class GUIMain extends JPanel{
         subText2.setBounds(520, 200, 300, 30);
         add(subText2);
         button1 = new JButton("Guest Account");
-        button1.setBounds(125,300, 150, 40);
+        button1.setBounds(480,300, 150, 40);
         button2 = new JButton("Personal Account");
-        button2.setBounds(325,300, 150, 40);
+        button2.setBounds(680,300, 150, 40);
         add(button1);
         add(button2);
     }
+
 
 }
