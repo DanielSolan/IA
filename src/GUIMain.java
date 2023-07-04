@@ -1,14 +1,15 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
 public class GUIMain extends JPanel{
-    JButton button1;
-    JButton button2;
-    private BufferedImage logoPic;
+    JButton guest;
+    JButton login;
 
     public GUIMain(int width, int height) throws IOException {
         System.out.println("Creating GUI");
@@ -23,12 +24,25 @@ public class GUIMain extends JPanel{
         JLabel subText2 = new JLabel("Do you want to use a guest account or your own?");
         subText2.setBounds(520, 200, 300, 30);
         add(subText2);
-        button1 = new JButton("Guest Account");
-        button1.setBounds(480,300, 150, 40);
-        button2 = new JButton("Personal Account");
-        button2.setBounds(680,300, 150, 40);
-        add(button1);
-        add(button2);
+        guest = new JButton("Guest Account");
+        guest.setBounds(480,300, 150, 40);
+        login = new JButton("Personal Account");
+        login.setBounds(680,300, 150, 40);
+        add(guest);
+        add(login);
+        //TODO; Add login system to login button
+        guest.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame menu = new JFrame("Main Menu");
+                menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                menu.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                GUIMenu men = null;
+                men = new GUIMenu();
+                menu.add(men);
+                menu.setVisible(true);
+            }
+        });
     }
 
 
