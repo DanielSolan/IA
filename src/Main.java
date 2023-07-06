@@ -21,7 +21,7 @@ public class Main {
         JLabel logo = new JLabel(new ImageIcon(logoPic));
         splash.add(logo);
         splash.setVisible(true);
-        Timer timer = new Timer(3000, new ActionListener(){
+        Timer timer = new Timer(2000, new ActionListener(){
             public void actionPerformed(ActionEvent evt) {
                 splash.dispose();
                 JFrame frame = new JFrame("Default Frame");

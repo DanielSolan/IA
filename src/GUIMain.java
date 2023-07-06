@@ -10,6 +10,7 @@ import java.io.IOException;
 public class GUIMain extends JPanel{
     JButton guest;
     JButton login;
+    public static int counter = 0;
 
     public GUIMain(int width, int height) throws IOException {
         System.out.println("Creating GUI");
@@ -35,7 +36,7 @@ public class GUIMain extends JPanel{
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame menu = new JFrame("Main Menu");
-                menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                menu.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 menu.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 GUIMenu men = null;
                 men = new GUIMenu();

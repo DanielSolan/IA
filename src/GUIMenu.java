@@ -54,7 +54,6 @@ public class GUIMenu extends JPanel {
         back.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                setVisible(false);
             }
         });
         exit.addActionListener(new ActionListener() {
