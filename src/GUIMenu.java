@@ -12,7 +12,7 @@ public class GUIMenu extends JPanel {
     JButton exit = new JButton("Exit");
 
     public GUIMenu(){
-        System.out.println("Creating GUI");
+        System.out.println("Creating Menu");
         this.setPreferredSize(new Dimension(1920, 1080));
         setLayout(null);
         Continue.setBounds(100,50, 150, 40);
@@ -36,7 +36,13 @@ public class GUIMenu extends JPanel {
         settings.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                JFrame settings = new JFrame("Settings");
+                settings.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                settings.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                GUISettings set = null;
+                set = new GUISettings();
+                settings.add(set);
+                settings.setVisible(true);
             }
         });
         help.addActionListener(new ActionListener() {
