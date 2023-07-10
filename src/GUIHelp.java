@@ -1,13 +1,13 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class GUIAbout extends JPanel {
+public class GUIHelp extends JPanel {
 
-    public GUIAbout(){
-        System.out.println("Creating About page");
+    public GUIHelp(){
+        System.out.println("Creating Help page");
         this.setPreferredSize(new Dimension(1920, 1080));
         setLayout(null);
-        JLabel mainText = new JLabel("This is a student-built project.");
+        JLabel mainText = new JLabel("");
         mainText.setBounds(400, 100, 250, 150);
         add(mainText);
     }
