@@ -10,7 +10,6 @@ import java.io.IOException;
 public class GUIMain extends JPanel{
     JButton guest;
     JButton login;
-    public static int counter = 0;
 
     public GUIMain(int width, int height) throws IOException {
         System.out.println("Creating GUI");

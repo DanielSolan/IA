@@ -48,7 +48,13 @@ public class GUIMenu extends JPanel {
         help.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                JFrame help = new JFrame("Help");
+                help.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                help.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                GUIHelp ab = null;
+                ab = new GUIHelp();
+                help.add(ab);
+                help.setVisible(true);
             }
         });
         about.addActionListener(new ActionListener() {

@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class GUIAbout extends JPanel {
+public class GUIAbout extends GUIText {
 
     public GUIAbout(){
         System.out.println("Creating About page");
