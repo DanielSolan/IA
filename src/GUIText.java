@@ -7,5 +7,6 @@ public class GUIText extends JPanel {
         System.out.println("Creating Text page");
         this.setPreferredSize(new Dimension(1920, 1080));
         setLayout(null);
+        //TODO; Add more common command to reduce code repeating
     }
 }

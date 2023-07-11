@@ -21,7 +21,7 @@ public class GUISettings extends JPanel {
             public void actionPerformed(ActionEvent e){
                 tester = test.getText();
                 JLabel subText1 = new JLabel(tester);
-                subText1.setBounds(480, 120, 400, 60);
+                subText1.setBounds(880, 120, 400, 60);
                 add(subText1);
             }
         });

@@ -30,7 +30,7 @@ public class GUIMenu extends JPanel {
         Continue.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                //TODO: Run processing side
             }
         });
         settings.addActionListener(new ActionListener() {
@@ -72,6 +72,7 @@ public class GUIMenu extends JPanel {
         back.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //TODO; Dispose window upon button press
             }
         });
         exit.addActionListener(new ActionListener() {
