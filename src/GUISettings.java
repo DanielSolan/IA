@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 
 public class GUISettings extends JPanel {
 
-    static String tester;
     public GUISettings(){
         System.out.println("Creating Settings page");
         this.setPreferredSize(new Dimension(1920, 1080));
@@ -19,7 +18,7 @@ public class GUISettings extends JPanel {
         confirm.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){
-                tester = test.getText();
+                String tester = test.getText();
                 JLabel subText1 = new JLabel(tester);
                 subText1.setBounds(880, 120, 400, 60);
                 add(subText1);

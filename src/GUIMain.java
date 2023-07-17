@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.Scanner;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -34,10 +35,35 @@ public class GUIMain extends JPanel{
                 JFrame menu = new JFrame("Main Menu");
                 menu.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 menu.setExtendedState(JFrame.MAXIMIZED_BOTH);
-                GUIMenu men = null;
+                GUIMenu men;
                 men = new GUIMenu();
                 menu.add(men);
                 menu.setVisible(true);
+            }
+        });
+        login.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame login = new JFrame("Login");
+                login.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                login.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                GUILogin log;
+                log = new GUILogin();
+                login.add(log);
+                login.setVisible(true);
+                System.out.println("Do you want to create an account or login to an existing account. A for the first, L for the second");
+                Scanner read = new Scanner(System.in);
+                String logInput = read.nextLine();
+                if (logInput.equals("L")){
+
+                } else if(logInput.equals("A")){
+                    System.out.println("A random user ID will be generated and assigned to your account");
+
+                } else{
+
+                }
+
+
             }
         });
     }
