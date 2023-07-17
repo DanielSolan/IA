@@ -20,7 +20,7 @@ public class Main {
         splash.add(logo);
         splash.setVisible(true);
         Timer timer = new Timer(2000, new ActionListener(){
-            public void actionPerformed(ActionEvent evt) {
+            public void actionPerformed(ActionEvent ev) {
                 splash.dispose();
                 JFrame frame = new JFrame("Default Frame");
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
