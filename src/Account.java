@@ -1,3 +1,8 @@
+
+import java.io.Serializable;
+//Used for writing/reading objects to files
+//TODO: Implement writing/reading Account objects from files.
+
 public class Account {
     private String userID;
     private float density;
