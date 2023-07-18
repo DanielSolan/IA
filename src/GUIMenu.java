@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class GUIMenu extends JPanel {
-    JButton Continue = new JButton("Continue");
+    JButton Continue = new JButton("Simulate");
     JButton settings = new JButton("Settings");
     JButton help = new JButton("Help");
     JButton about = new JButton("About");
@@ -30,7 +30,7 @@ public class GUIMenu extends JPanel {
         Continue.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //TODO: Run processing side
+                LatticeBoltzmann.main();
             }
         });
         settings.addActionListener(new ActionListener() {
