@@ -31,6 +31,7 @@ public class GUIMenu extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 LatticeBoltzmann.main();
+                System.out.println("Simulation started");
             }
         });
         settings.addActionListener(new ActionListener() {

@@ -1,8 +1,3 @@
-
-import java.io.Serializable;
-//Used for writing/reading objects to files
-//TODO: Implement writing/reading Account objects from files.
-
 public class Account {
     private String userID;
     private float density;
@@ -38,5 +33,31 @@ public class Account {
     public void setVelocity(float newValue){
         //set a new value for velocity
         velocity = newValue;
+    }
+
+    public String[] accountArray(){
+        String[] fileAcc = new String[3];
+        fileAcc[0] = getUserID();
+        fileAcc[1] = getDensity();
+        fileAcc[2] = getVelocity();
+        return fileAcc;
+    }
+
+    public String formatAccount(String[] data){
+        String account = data.toString();
+        return account;
+    }
+
+    //Get methods for all three variables, used for file handling.
+    public String getUserID(){
+        return userID;
+    }
+
+    public String getDensity(){
+        return String.valueOf(density);
+    }
+
+    public String getVelocity(){
+        return String.valueOf(velocity);
     }
 }
