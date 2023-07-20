@@ -6,11 +6,11 @@ import java.text.DecimalFormat;
 class LatticeBoltzmann extends Canvas implements Runnable, MouseListener, MouseMotionListener {
 
     // Global variables, starting with the grid size:
-    int xdim = 200;				// dimensions of lattice
-    int ydim = 80;
-    int pixelsPerSquare = 3;	// for graphics
+    int xdim = 600;				// dimensions of lattice
+    int ydim = 100;
+    int pixelsPerSquare = GlobalVariables.resolution;	// for graphics
 
-    // Here are the arrays of densities by velocity, named by velocity directions with north up:
+    // Arrays of densities by velocity, named by velocity directions with north up
     double[][] n0 = new double[xdim][ydim];
     double[][] nN = new double[xdim][ydim];
     double[][] nS = new double[xdim][ydim];
@@ -41,20 +41,15 @@ class LatticeBoltzmann extends Canvas implements Runnable, MouseListener, MouseM
 
     // Array of colors for graphics:
     int nColors = 600;
-    //Color[] shade = new Color[nColors];
     int[] colorInt = new int[nColors];		// colors stored as integers for MemoryImageSource
     int blackColorInt = Color.HSBtoRGB((float)0,(float)1,(float)0);		// an integer to represent the color black
     {	for (int c=0; c<nColors; c++) {
         double h = (2.0/3) * (1 - c*1.0/nColors);	// hue from blue->cyan->green->yellow->red
         h += 0.03 * Math.sin(6*Math.PI*h);					// for smoother color gradations
-        //shade[c] = Color.getHSBColor((float)h,(float)1,(float)1);
         colorInt[c] = Color.HSBtoRGB((float)h,(float)1,(float)1);	// store each color as an integer
     }
     }
 
-    // Image-related objects for sophisticated memory image source:
-    //int[] iPixels = new int[xdim * ydim];
-    //MemoryImageSource iSource = new MemoryImageSource(xdim,ydim,iPixels,0,xdim);
     int[] iPixels = new int[xdim * pixelsPerSquare * ydim * pixelsPerSquare];
     MemoryImageSource iSource = new MemoryImageSource(xdim*pixelsPerSquare,ydim*pixelsPerSquare,
             iPixels,0,xdim*pixelsPerSquare);
@@ -75,9 +70,9 @@ class LatticeBoltzmann extends Canvas implements Runnable, MouseListener, MouseM
     Canvas dataCanvas;			// for numerical readouts
     DecimalFormat threePlaces = new DecimalFormat("0.000");
     Button runButton = new Button(" Run ");
-    DoubleScroller barrierSizeScroller = new DoubleScroller("Barrier size = ",1,50,1,20);
+    DoubleScroller barrierSizeScroller = new DoubleScroller("Barrier size = ",1,70,1,20);
     DoubleScroller viscScroller = new DoubleScroller("Viscosity = ",.01,1,.01,.02);
-    DoubleScroller speedScroller = new DoubleScroller("Flow speed = ",0,0.12,0.005,0.1);
+    DoubleScroller speedScroller = new DoubleScroller("Flow speed = ",0,0.2,0.005,0.1);
     Checkbox pbcCheck = new Checkbox("PBC",true);
     DoubleScroller contrastScroller = new DoubleScroller("Contrast = ",1,100,1,20);
     Choice plotChoice = new Choice();

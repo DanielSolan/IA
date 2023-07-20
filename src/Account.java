@@ -2,12 +2,14 @@ public class Account {
     private String userID;
     private float density;
     private float velocity;
+    public static int resolution = 2;
 
     public Account(String userID){
         //Creating an account, without any preferences. Assigns default values to parameters.
         this.userID = userID;
         density = 1.00f;
         velocity = 16.00f;
+        resolution = 2;
     }
 
     public Account(String userID, float density, float velocity){
@@ -15,6 +17,7 @@ public class Account {
         this.userID = userID;
         this.density = density;
         this.velocity = velocity;
+        resolution = 2;
     }
 
     public void getUserDetails(){
@@ -33,6 +36,11 @@ public class Account {
     public void setVelocity(float newValue){
         //set a new value for velocity
         velocity = newValue;
+    }
+
+    public void setRes(int newValue){
+        //set a new value for velocity
+        resolution = newValue;
     }
 
     public String[] accountArray(){
@@ -59,5 +67,9 @@ public class Account {
 
     public String getVelocity(){
         return String.valueOf(velocity);
+    }
+
+    public int getRes(){
+        return resolution;
     }
 }
