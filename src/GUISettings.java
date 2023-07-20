@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Scanner;
 
 public class GUISettings extends JPanel {
 
@@ -16,6 +17,12 @@ public class GUISettings extends JPanel {
         JButton confirm = new JButton("Enter");
         confirm.setBounds(300, 100, 100, 100);
         add(confirm);
+        JLabel mainText = new JLabel("Resolution: 1 - Very detailed, very taxing. 2 - Ideal, good detail and decent performance. 3 - Better performance with decent detail. 4 - Best performance, worst detail");
+        mainText.setBounds(400, 100, 600, 150);
+        add(mainText);
+        Scanner myS = new Scanner(System.in);
+        System.out.println("What resolution do you want?");
+        GlobalVariables.resolution = Integer.parseInt(myS.nextLine());
         confirm.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){
