@@ -27,6 +27,7 @@ public class Main {
                 frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 GUIMain myGUI = null;
                 try {
+                    //Input width and height of typical 16:9 monitor, in pixels
                     myGUI = new GUIMain(1920, 1080);
                 } catch (IOException e) {
                     e.printStackTrace();

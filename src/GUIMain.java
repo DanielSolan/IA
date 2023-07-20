@@ -10,9 +10,12 @@ public class GUIMain extends JPanel{
     JButton login;
 
     public GUIMain(int width, int height) throws IOException {
+        //Debugging tool
         System.out.println("Creating GUI");
+        //Uses the width and height values passed through from method in main()
         this.setPreferredSize(new Dimension(width, height));
         setLayout(null);
+        //
         JLabel mainText = new JLabel("Welcome to Simple Fluid Simulation");
         mainText.setBounds(560, 100, 250, 30);
         add(mainText);
@@ -33,7 +36,9 @@ public class GUIMain extends JPanel{
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame menu = new JFrame("Main Menu");
+                //Dispose_On_Close as opposed to Exit_On_Close: Non-essential window
                 menu.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                //Maximise the size of the window, relative to the monitor
                 menu.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 GUIMenu men;
                 men = new GUIMenu();

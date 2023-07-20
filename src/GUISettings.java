@@ -7,6 +7,7 @@ public class GUISettings extends JPanel {
 
     public GUISettings(){
         System.out.println("Creating Settings page");
+        //Set dimensions to fill out typical 16:9 monitor
         this.setPreferredSize(new Dimension(1920, 1080));
         setLayout(null);
         JTextField test = new JTextField();
