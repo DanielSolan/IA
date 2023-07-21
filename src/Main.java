@@ -8,8 +8,6 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        Database userLogin = new Database("login.txt", 4);
-        userLogin.deleteRecord(2);
 
         System.out.println("SEQUENCE: Program started");
         JFrame splash = new JFrame("Splash Screen");

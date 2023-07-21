@@ -54,10 +54,11 @@ public class FileHandler {
         //If not, it continues until there are no elements left to check and returns false.
         boolean hasFound = false;
         try(BufferedReader pw = new BufferedReader(new FileReader(fileName))){
-            String ascii = pw.readLine();
+            String ascii;
             while (hasFound == false){
                 ascii = pw.readLine();
-                if(ascii.equals(element)){
+                String ID = ascii.substring(0,4);
+                if(ID.equals(element)){
                     hasFound = true;
                     return hasFound;
                 }
@@ -109,5 +110,30 @@ public class FileHandler {
             e.printStackTrace();
         }
         return counter;
+    }
+
+    public static int elementIndex(String fileName,String element){
+        //Checks each line of the file
+        //If data equals desired value, returns true.
+        //If not, it continues until there are no elements left to check and returns false.
+        boolean hasFound = false;
+        try(BufferedReader pw = new BufferedReader(new FileReader(fileName))){
+            String ascii = pw.readLine();
+            int index = 0;
+            while (hasFound == false){
+                index++;
+                ascii = pw.readLine();
+                String ID = ascii.substring(0,4);
+                if(ID.equals(element)){
+                    hasFound = true;
+                    return index;
+                }
+            }
+            return index;
+        }catch(IOException e){
+            System.out.println("There has been an error with the process.");
+            e.printStackTrace();
+        }
+        return 0;
     }
 }

@@ -48,7 +48,7 @@ public class GUIMain extends JPanel{
         });
         login.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e){
                 JFrame login = new JFrame("Login");
                 login.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 login.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -56,19 +56,6 @@ public class GUIMain extends JPanel{
                 log = new GUILogin();
                 login.add(log);
                 login.setVisible(true);
-                System.out.println("Do you want to create an account or login to an existing account. A for the first, L for the second");
-                Scanner read = new Scanner(System.in);
-                String logInput = read.nextLine();
-                if (logInput.equals("L")){
-
-                } else if(logInput.equals("A")){
-                    System.out.println("A random user ID will be generated and assigned to your account");
-
-                } else{
-
-                }
-
-
             }
         });
     }
