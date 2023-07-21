@@ -43,17 +43,9 @@ public class Account {
         resolution = newValue;
     }
 
-    public String[] accountArray(){
-        String[] fileAcc = new String[3];
-        fileAcc[0] = getUserID();
-        fileAcc[1] = getDensity();
-        fileAcc[2] = getVelocity();
+    public String accountString(){
+        String fileAcc = userID + String.valueOf(resolution);
         return fileAcc;
-    }
-
-    public String formatAccount(String[] data){
-        String account = data.toString();
-        return account;
     }
 
     //Get methods for all three variables, used for file handling.
